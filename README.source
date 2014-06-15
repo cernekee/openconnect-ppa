@@ -1,0 +1,3 @@
+This package is using quilt for patching, see /usr/share/doc/quilt/README.source.
+
+ -- Ross Burton <ross@debian.org>, Wed, 11 May 2011 15:28:57 +0100

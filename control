@@ -1,0 +1,57 @@
+Source: openconnect
+Section: net
+Priority: optional
+Maintainer: Mike Miller <mtmiller@ieee.org>
+Build-Depends: debhelper (>= 9),
+ dh-autoreconf,
+ groff,
+ pkg-config,
+ python,
+ libp11-kit-dev,
+ libproxy-dev,
+ libssl-dev (>= 0.9.8g-14),
+ libstoken-dev,
+ libxml2-dev,
+ zlib1g-dev
+Standards-Version: 3.9.5
+Vcs-Git: git://anonscm.debian.org/collab-maint/openconnect.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/openconnect.git
+Homepage: http://www.infradead.org/openconnect/
+
+Package: openconnect
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, vpnc-scripts
+Description: Open client for Cisco AnyConnect VPN
+ OpenConnect is a client for Cisco's AnyConnect SSL VPN, which is supported by
+ the ASA5500 Series, by IOS 12.4(9)T or later on Cisco SR500, 870, 880, 1800,
+ 2800, 3800, 7200 Series and Cisco 7301 Routers, and probably others.
+
+Package: libopenconnect3
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: ca-certificates
+Description: Open client for Cisco AnyConnect VPN - shared library
+ OpenConnect is a client for Cisco's AnyConnect SSL VPN, which is supported by
+ the ASA5500 Series, by IOS 12.4(9)T or later on Cisco SR500, 870, 880, 1800,
+ 2800, 3800, 7200 Series and Cisco 7301 Routers, and probably others.
+ .
+ This package provides the shared library.
+
+Package: libopenconnect-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, libopenconnect3 (= ${binary:Version}),
+ libp11-kit-dev,
+ libproxy-dev,
+ libxml2-dev,
+ zlib1g-dev
+Description: Open client for Cisco AnyConnect VPN - development files
+ OpenConnect is a client for Cisco's AnyConnect SSL VPN, which is supported by
+ the ASA5500 Series, by IOS 12.4(9)T or later on Cisco SR500, 870, 880, 1800,
+ 2800, 3800, 7200 Series and Cisco 7301 Routers, and probably others.
+ .
+ This package provides the header and development files.

@@ -1,0 +1,8 @@
+Quick one-off hack for building openconnect PPA packages.
+
+Usage:
+
+    git clone git://git.infradead.org/users/dwmw2/openconnect.git
+    cd openconnect
+    git clone git://github.com/cernekee/openconnect-ppa.git debian
+    debian/ppa.sh

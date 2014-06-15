@@ -1,0 +1,6 @@
+- Add Build-Depends: libstoken-dev when it becomes available in Debian.
+
+Long-term:
+
+- Remove Build-Depends: libssl-dev when GnuTLS with Cisco DTLS support (3.2?)
+  is packaged, and no conflicts with GnuTLS linked by NetworkManager libraries.
