@@ -76,7 +76,10 @@ touch lintian.txt
 dist=$(lsb_release -si)
 if [ "$dist" = "Ubuntu" ]; then
 	pushd debian
-	git checkout -f changelog
+	git checkout -f changelog control
+	if ! dpkg -l vpnc-scripts >& /dev/null; then
+		sed -i -e 's/vpnc-scripts/vpnc/g' control
+	fi
 	popd
 
 	codename=$(lsb_release -sc)
